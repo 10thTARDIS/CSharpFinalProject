@@ -17,14 +17,19 @@ namespace CSharp_Final_Project
         public int hours = 45;
         public float gross = 0.0f;
         float tax = 0.0f;
-        float net = 0.0f;
+        public float net = 0.0f;
         float net_percent = 0.0f;
+        String ID;
 
         //End Attributes
 
         /********************
 	     Constructors
 	    ********************/
+        public Employee(String arg_ID)
+        {
+            ID = arg_ID;
+        }
         public Employee()
         {
 

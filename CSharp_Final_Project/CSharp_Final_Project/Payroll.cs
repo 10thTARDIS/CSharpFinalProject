@@ -10,9 +10,11 @@ namespace CSharp_Final_Project
 {
     class Payroll
     {
-        Employee[] empArray = new Employee[3];
+        public Employee[] empArray = { new Employee("123"), new Employee("456"), new Employee("789") };
         int input;
+        int numberItems;
         bool employeesExist = false;
+        int temp;
         public static void Main(string[] args)
         {
             Payroll pay = new Payroll();
@@ -89,29 +91,32 @@ namespace CSharp_Final_Project
             //Hourly employee
             Console.WriteLine("Hourly employee:\nHow many hours?");
             input = Convert.ToInt32(Console.ReadLine());
-            em.hours = input;
+            empArray[0].hours = input;
             Console.WriteLine("Pay rate:");
             input = Convert.ToInt32(Console.ReadLine());
-            em.rate = input;
+            empArray[0].rate = input;
 
             //Salaried employees
             Console.WriteLine("Salary employee:\nStaff or executive? (1 or 9)");
             input = Convert.ToInt32(Console.ReadLine());
             if (input == 1)
             {
-                em.gross = 50000;
+                empArray[1].gross = 50000;
             }
             else if(input == 9)
             {
-                em.gross = 100000;
+                empArray[1].gross = 100000;
             }
 
 
             //Commissioned employee
             Console.WriteLine("Commissioned employee:\nNumber of items sold?");
-            //set numberItems
+            input = Convert.ToInt32(Console.ReadLine());
+            numberItems = input;
             Console.WriteLine("Unit price of items sold?");
-            //set net to .5(input*numberItems) 
+            //input = Convert.ToInt32(Console.ReadLine());
+            //set net to .5(input*numberItems)
+            //temp = 0.5 * (input * numberItems);
 
             employeesExist = true;
         }
