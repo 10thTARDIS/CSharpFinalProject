@@ -90,12 +90,11 @@ namespace CSharp_Final_Project
 
         public void saveEmployee()
         {
-            Console.WriteLine("\nYour changes have been saved.  Goodbye.");
-
             Stream FileStream = File.Create("test.xml");
             XmlSerializer serializer = new XmlSerializer(typeof(Employee[]));
             serializer.Serialize(FileStream, empArray);
             FileStream.Close();
+            Console.WriteLine("\nYour changes have been saved.  Goodbye.");
         }
 
         public void loadEmployee()
@@ -104,7 +103,7 @@ namespace CSharp_Final_Project
             XmlSerializer deserializer = new XmlSerializer(typeof(Employee[]));
             empArray = (Employee[])deserializer.Deserialize(FileStream);
             FileStream.Close();
-            emploaded = true;
+            employeesExist = true;
         }
     }
 }
