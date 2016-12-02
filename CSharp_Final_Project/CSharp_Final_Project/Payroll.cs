@@ -85,7 +85,20 @@ namespace CSharp_Final_Project
 
         public void selectEmployee()
         {
-
+            string sinput = null;
+            int input;
+            input = -1;
+            while (input != -99)
+            {
+                Console.WriteLine("Please enter the employee number (0, 1, or 2).  -99 to exit.");
+                sinput = Console.ReadLine();
+                input = Convert.ToInt32(sinput);
+                if (input != -99)
+                {
+                    empArray[input].menu();
+                }
+                else Console.WriteLine("Goodbye.");
+            }
         }
 
         public void saveEmployee()
