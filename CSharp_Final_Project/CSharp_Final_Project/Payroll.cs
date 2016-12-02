@@ -78,11 +78,15 @@ namespace CSharp_Final_Project
             employeesExist = true;
             Console.WriteLine("Please fill out the attributes for the employees you wish to add\n");
             Console.WriteLine("Hourly employee:\nHow many hours?");
+            //overwrite hours here
             Console.WriteLine("Pay rate:");
+            //overwrite rate
             Console.WriteLine("Salary employee:\nStaff or executive? (1 or 9)");
-            Console.WriteLine("Comission employee:\nNumber of items sold?");
+            //set salary
+            Console.WriteLine("Commission employee:\nNumber of items sold?");
+            //set numberItems
             Console.WriteLine("Unit price of items sold?");
-            input = Convert.ToInt32(Console.ReadLine());
+            //set net to .5(input*numberItems) 
         }
 
         public void selectEmployee()
