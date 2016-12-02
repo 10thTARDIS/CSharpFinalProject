@@ -92,7 +92,8 @@ namespace CSharp_Final_Project
             input = -1;
             while (input != -99)
             {
-                Console.WriteLine("Please enter the employee number (0, 1, or 2).  -99 to exit.");
+                Console.WriteLine("Please Select an employee: \nEnter 0 for an Hourly Employee \nEnter 1 for a Salary Employee \nEnter 2 for a Comission Employee \nEnter -99 to Exit");
+                //Console.WriteLine("\n 0, 1, or 2).  -99 to exit.");
                 sinput = Console.ReadLine();
                 input = Convert.ToInt32(sinput);
                 if (input != -99)
