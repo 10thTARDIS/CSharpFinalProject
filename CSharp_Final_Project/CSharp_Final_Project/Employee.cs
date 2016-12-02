@@ -79,7 +79,7 @@ namespace CSharp_Final_Project
         {
             if (hours > 40)
                 {
-                    gross = (hours - 40) * rate + rate * hours;
+                    gross = (hours - 40) * rate + rate * 40;
                     Console.WriteLine("Hours: " + hours);
                     Console.WriteLine("Rate: " + rate);
                     Console.WriteLine("Gross: " + gross);
