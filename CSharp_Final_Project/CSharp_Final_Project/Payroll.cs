@@ -10,9 +10,10 @@ namespace CSharp_Final_Project
 {
     class Payroll
     {
-        Employee[] acctArray = new Employee[3];
+        Employee[] empArray = new Employee[3];
         int input;
         bool employeesExist = false;
+        bool emploaded = false;
         public static void Main(string[] args)
         {
 
@@ -85,7 +86,7 @@ namespace CSharp_Final_Project
             XmlSerializer deserializer = new XmlSerializer(typeof(Employee[]));
             empArray = (Employee[])deserializer.Deserialize(FileStream);
             FileStream.Close();
-            acctsloaded = true;
+            emploaded = true;
         }
     }
 }
