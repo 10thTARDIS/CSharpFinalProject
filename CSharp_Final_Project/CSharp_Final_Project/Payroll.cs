@@ -75,18 +75,28 @@ namespace CSharp_Final_Project
 
         public void populateEmployees()
         {
-            employeesExist = true;
+            Employee em = new Employee();
             Console.WriteLine("Please fill out the attributes for the employees you wish to add\n");
+            
+            //Hourly employee
             Console.WriteLine("Hourly employee:\nHow many hours?");
-            //overwrite hours here
+            input = Convert.ToInt32(Console.ReadLine());
+            em.hours = input;
             Console.WriteLine("Pay rate:");
-            //overwrite rate
+            input = Convert.ToInt32(Console.ReadLine());
+            em.rate = input;
+
+            //Salaried employees
             Console.WriteLine("Salary employee:\nStaff or executive? (1 or 9)");
             //set salary
-            Console.WriteLine("Commission employee:\nNumber of items sold?");
+
+            //Commissioned employee
+            Console.WriteLine("Commissioned employee:\nNumber of items sold?");
             //set numberItems
             Console.WriteLine("Unit price of items sold?");
             //set net to .5(input*numberItems) 
+
+            employeesExist = true;
         }
 
         public void selectEmployee()

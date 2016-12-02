@@ -12,9 +12,9 @@ namespace CSharp_Final_Project
         /*********************
              Attributes
         *********************/
-        float rate = 30.0f;
+        public float rate = 30.0f;
         float taxrate = 0.2f;
-        int hours = 45;
+        public int hours = 45;
         float gross = 0.0f;
         float tax = 0.0f;
         float net = 0.0f;
