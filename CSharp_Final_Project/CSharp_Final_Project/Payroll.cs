@@ -13,7 +13,6 @@ namespace CSharp_Final_Project
         Employee[] empArray = new Employee[3];
         int input;
         bool employeesExist = false;
-        bool emploaded = false;
         public static void Main(string[] args)
         {
             Payroll pay = new Payroll();
