@@ -17,6 +17,8 @@ namespace CSharp_Final_Project
         public static void Main(string[] args)
         {
             Payroll pay = new Payroll();
+            Console.WriteLine("Welcome to the system.");
+            Console.WriteLine("One moment, logging on...");
             pay.menu();
         }
 
@@ -25,7 +27,6 @@ namespace CSharp_Final_Project
             input = -99;
             do
             {
-                Console.WriteLine("Welcome to the system.");
                 Console.WriteLine("\nWhat would you like to do?\n");
                 Console.WriteLine("1) Populate Employees");
                 Console.WriteLine("2) Select Employee");
@@ -61,6 +62,8 @@ namespace CSharp_Final_Project
                     {
                         Console.WriteLine("Invalid input.  Please enter either 1 to not overwrite, or 9 to overwrite.");
                     } while (input != 1) ;
+
+                    Console.WriteLine("Returning to the main menu.  One moment...");
 
                 }
             } while (input != 5);
