@@ -97,7 +97,7 @@ namespace CSharp_Final_Project
             empArray[0].rate = input;
 
             //Salaried employees
-            Console.WriteLine("Salary employee:\nStaff or executive? (1 or 9)");
+            Console.WriteLine("\nSalary employee:\nStaff or executive? (1 or 9)");
             input = Convert.ToInt32(Console.ReadLine());
             if (input == 1)
             {
@@ -110,7 +110,7 @@ namespace CSharp_Final_Project
 
 
             //Commissioned employee
-            Console.WriteLine("Commissioned employee:\nNumber of items sold?");
+            Console.WriteLine("\nCommissioned employee:\nNumber of items sold?");
             input = Convert.ToInt32(Console.ReadLine());
             numberItems = input;
             Console.WriteLine("Unit price of items sold?");
