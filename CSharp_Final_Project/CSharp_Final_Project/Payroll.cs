@@ -82,6 +82,7 @@ namespace CSharp_Final_Project
             Console.WriteLine("Salary employee:\nStaff or executive? (1 or 9)");
             Console.WriteLine("Comission employee:\nNumber of items sold?");
             Console.WriteLine("Unit price of items sold?");
+            input = Convert.ToInt32(Console.ReadLine());
         }
 
         public void selectEmployee()
