@@ -12,7 +12,8 @@ namespace CSharp_Final_Project
         bool employeesExist = false;
         public static void Main(string[] args)
         {
-
+            Payroll pay = new Payroll();
+            pay.menu();
         }
 
         public void menu()
@@ -40,9 +41,22 @@ namespace CSharp_Final_Project
                 {
                     saveEmployee();
                 }
-                else if (input == 4 && employeesExist == true)
+                else if (input == 4 && employeesExist == false)
                 {
                     loadEmployee();
+                }
+                else if (input == 4 && employeesExist == true)
+                {
+                    Console.WriteLine("You have already created employees.  Would you like to overwrite them? 1=no, 9=yes");
+                    if (input == 9)
+                    {
+                        loadEmployee();
+                    }
+                    else if (input != 1)
+                    {
+                        Console.WriteLine("Invalid input.  Please enter either 1 to not overwrite, or 9 to overwrite.");
+                    } while (input != 1) ;
+
                 }
             } while (input != 5);
             //else if (input == 5)
