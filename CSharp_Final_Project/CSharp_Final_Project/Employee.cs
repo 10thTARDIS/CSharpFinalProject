@@ -78,21 +78,28 @@ namespace CSharp_Final_Project
         public void computeGross()
         {
             gross = rate * hours;
+            Console.WriteLine("Hours: " + hours);
+            Console.WriteLine("Rate: " + rate);
+            Console.WriteLine("Gross: " + gross);
         }
 
         public void computeTax()
         {
             tax = gross * taxrate;
+            Console.WriteLine("Tax: " + tax);
+
         }
 
         public void computeNet()
         {
             net = gross - tax;
+            Console.WriteLine("Net: " + net);
         }
 
         public void computeNetperc()
         {
             net_percent = (net / gross) * 100;
+            Console.WriteLine("Net%: " + net_percent + "%");
         }
 
         public void displayEmployee()
