@@ -77,10 +77,20 @@ namespace CSharp_Final_Project
 
         public void computeGross()
         {
-            gross = rate * hours;
-            Console.WriteLine("Hours: " + hours);
-            Console.WriteLine("Rate: " + rate);
-            Console.WriteLine("Gross: " + gross);
+            if (hours > 40)
+                {
+                    gross = (hours - 40) * rate + rate * hours;
+                    Console.WriteLine("Hours: " + hours);
+                    Console.WriteLine("Rate: " + rate);
+                    Console.WriteLine("Gross: " + gross);
+            }
+            else
+               {         
+                     gross = rate * hours;
+                     Console.WriteLine("Hours: " + hours);
+                     Console.WriteLine("Rate: " + rate);
+                     Console.WriteLine("Gross: " + gross);
+             }
         }
 
         public void computeTax()
