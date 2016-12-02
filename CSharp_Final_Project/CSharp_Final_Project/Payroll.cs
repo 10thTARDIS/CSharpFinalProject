@@ -76,10 +76,12 @@ namespace CSharp_Final_Project
         public void populateEmployees()
         {
             employeesExist = true;
-            Console.WriteLine("What type of employee would you like to add?\n");
-            Console.WriteLine("1) Salary");
-            Console.WriteLine("2) Commission");
-            Console.WriteLine("3) Salary");
+            Console.WriteLine("Please fill out the attributes for the employees you wish to add\n");
+            Console.WriteLine("Hourly employee:\nHow many hours?");
+            Console.WriteLine("Pay rate:");
+            Console.WriteLine("Salary employee:\nStaff or executive? (1 or 9)");
+            Console.WriteLine("Comission employee:\nNumber of items sold?");
+            Console.WriteLine("Unit price of items sold?");
         }
 
         public void selectEmployee()
