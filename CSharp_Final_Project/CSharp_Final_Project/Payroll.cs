@@ -88,7 +88,16 @@ namespace CSharp_Final_Project
 
             //Salaried employees
             Console.WriteLine("Salary employee:\nStaff or executive? (1 or 9)");
-            //set salary
+            input = Convert.ToInt32(Console.ReadLine());
+            if (input == 1)
+            {
+                em.gross = 50000;
+            }
+            else if(input == 9)
+            {
+                em.gross = 100000;
+            }
+
 
             //Commissioned employee
             Console.WriteLine("Commissioned employee:\nNumber of items sold?");
