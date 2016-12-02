@@ -52,6 +52,7 @@ namespace CSharp_Final_Project
                 else if (input == 4 && employeesExist == true)
                 {
                     Console.WriteLine("You have already created employees.  Would you like to overwrite them? 1=no, 9=yes");
+                    input = Convert.ToInt32(Console.ReadLine());
                     if (input == 9)
                     {
                         loadEmployee();
