@@ -13,6 +13,7 @@ namespace CSharp_Final_Project
              Attributes
         *********************/
         public float rate = 30.0f;
+        public float ovtrate = 45.0f;
         float taxrate = 0.2f;
         public int hours = 45;
         public float gross = 0.0f;
@@ -79,11 +80,12 @@ namespace CSharp_Final_Project
         {
             if (hours > 40)
                 {
-                    gross = (hours - 40) * rate + rate * 40;
+                    gross = (hours - 40) * ovtrate + rate * 40;
                     Console.WriteLine("Hours: " + hours);
                     Console.WriteLine("Rate: " + rate);
+                    Console.WriteLine("Over Time Rate: " + ovtrate);
                     Console.WriteLine("Gross: " + gross);
-            }
+                }
             else
                {         
                      gross = rate * hours;
