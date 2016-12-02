@@ -114,9 +114,11 @@ namespace CSharp_Final_Project
             input = Convert.ToInt32(Console.ReadLine());
             numberItems = input;
             Console.WriteLine("Unit price of items sold?");
-            //input = Convert.ToInt32(Console.ReadLine());
+            input = Convert.ToInt32(Console.ReadLine());
             //set net to .5(input*numberItems)
-            //temp = 0.5 * (input * numberItems);
+            empArray[2].gross = 0.5 * (input * numberItems);
+
+        //Testing commits
 
             employeesExist = true;
         }
