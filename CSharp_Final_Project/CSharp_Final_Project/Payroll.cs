@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CSharp_Final_Project
 {
@@ -68,12 +70,21 @@ namespace CSharp_Final_Project
 
         public void saveEmployee()
         {
+            Console.WriteLine("\nYour changes have been saved.  Goodbye.");
 
+            Stream FileStream = File.Create("test.xml");
+            XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
+            serializer.Serialize(FileStream, acctArray);
+            FileStream.Close();
         }
 
         public void loadEmployee()
         {
-
+            Stream FileStream = File.OpenRead("test.xml");
+            XmlSerializer deserializer = new XmlSerializer(typeof(Account[]));
+            empArray = (Account[])deserializer.Deserialize(FileStream);
+            FileStream.Close();
+            acctsloaded = true;
         }
     }
 }
