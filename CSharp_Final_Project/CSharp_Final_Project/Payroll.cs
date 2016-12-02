@@ -43,7 +43,7 @@ namespace CSharp_Final_Project
                 }
                 else if (input == 2 && employeesExist == false)
                 {
-                    Console.WriteLine("\nERROR: You must first populate employees");
+                    Console.WriteLine("\nERROR! You must first populate employees");
                 }
                 else if (input == 3 && employeesExist == true)
                 {
