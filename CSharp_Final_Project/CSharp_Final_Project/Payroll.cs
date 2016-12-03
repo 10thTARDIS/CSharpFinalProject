@@ -116,7 +116,7 @@ namespace CSharp_Final_Project
             Console.WriteLine("Unit price of items sold?");
             input = Convert.ToInt32(Console.ReadLine());
             //set net to .5(input*numberItems)
-            empArray[2].gross = 0.5 * (input * numberItems);
+            empArray[2].gross = 0.5f * (input * numberItems);  //You've gotta be kidding. To fix the error I just needed to add "f" after 0.5, to signify "float".
 
         //Testing commits
 
