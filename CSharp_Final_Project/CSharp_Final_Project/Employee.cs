@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CSharp_Final_Project
 {
     [Serializable()]
-    class Employee
+    public class Employee
     {
         /*********************
              Attributes
