@@ -22,8 +22,6 @@ namespace CSharp_Final_Project
         float net_percent = 0.0f;
         String ID;
         public int employeeID;
-        //Payroll py = new Payroll();
-
         //End Attributes
 
         /********************
@@ -51,7 +49,7 @@ namespace CSharp_Final_Project
                 Console.WriteLine("2) Calculate Tax");
                 Console.WriteLine("3) Calculate Net Pay");
                 Console.WriteLine("4) Calculate Net Percent");
-                Console.WriteLine("4) Display Employee ");
+                Console.WriteLine("5) Display Employee ");
                 Console.WriteLine("6) Exit");
                 input = Convert.ToInt32(Console.ReadLine());
                 if (input == 1)

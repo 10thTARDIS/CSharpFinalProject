@@ -12,9 +12,8 @@ namespace CSharp_Final_Project
     {
         public Employee[] empArray = { new Employee("123"), new Employee("456"), new Employee("789") };
         int input;
-        int numberItems;
-        bool employeesExist = false;
-        //int temp;
+        public int numberItems;
+        public bool employeesExist = false;
         public static void Main(string[] args)
         {
             Payroll pay = new Payroll();
@@ -26,6 +25,8 @@ namespace CSharp_Final_Project
         public void menu()
         {
             input = -99;
+            Employee em = new Employee();
+
             do
             {
                 Console.WriteLine("\nWhat would you like to do?\n");
@@ -76,49 +77,58 @@ namespace CSharp_Final_Project
 
                 }
             } while (input != 5);
-            //else if (input == 5)
-            //{
-
-            //}
-
         }
 
         public void populateEmployees()
         {
             Employee em = new Employee();
             Console.WriteLine("Please fill out the attributes for the employees you wish to add\n");
-            
-            //Hourly employee
-            Console.WriteLine("Hourly employee:\nHow many hours?");
-            input = Convert.ToInt32(Console.ReadLine());
-            empArray[0].hours = input;
-            Console.WriteLine("Pay rate:");
-            input = Convert.ToInt32(Console.ReadLine());
-            empArray[0].rate = input;
 
-            //Salaried employees
-            Console.WriteLine("\nSalary employee:\nStaff or executive? (1 or 9)");
-            input = Convert.ToInt32(Console.ReadLine());
-            if (input == 1)
+            for (int i=0; i<empArray.Length; i++)
             {
-                empArray[1].gross = 50000;
+                if (i == 0)
+                {
+                    //Hourly employee
+                    empArray[i] = new Hourly();
+                    Console.WriteLine("Hourly employee:\nHow many hours?");
+                    input = Convert.ToInt32(Console.ReadLine());
+                    empArray[0].hours = input;
+                    Console.WriteLine("Pay rate:");
+                    input = Convert.ToInt32(Console.ReadLine());
+                    empArray[0].rate = input;
+                }
+                else if (i == 1)
+                {
+                    //Salaried employees
+                    empArray[i] = new Salaried();
+                    Console.WriteLine("\nSalary employee:\nStaff or executive? (1 or 9)");
+                    input = Convert.ToInt32(Console.ReadLine());
+                    if (input == 1)
+                    {
+                        empArray[1].gross = 50000;
+                    }
+                    else if (input == 9)
+                    {
+                        empArray[1].gross = 100000;
+                    }
+                }
+                else if (i == 2)
+                {
+                    //Commissioned employee
+                    empArray[i] = new Commissioned();
+                    Console.WriteLine("\nCommissioned employee:\nNumber of items sold?");
+                    input = Convert.ToInt32(Console.ReadLine());
+                    numberItems = input;
+                    Console.WriteLine("Unit price of items sold?");
+                    input = Convert.ToInt32(Console.ReadLine());
+                    //set net to .5(input*numberItems)
+                    empArray[2].gross = 0.5f * (input * numberItems);
+                }
+                else
+                {
+
+                }
             }
-            else if(input == 9)
-            {
-                empArray[1].gross = 100000;
-            }
-
-
-            //Commissioned employee
-            Console.WriteLine("\nCommissioned employee:\nNumber of items sold?");
-            input = Convert.ToInt32(Console.ReadLine());
-            numberItems = input;
-            Console.WriteLine("Unit price of items sold?");
-            input = Convert.ToInt32(Console.ReadLine());
-            //set net to .5(input*numberItems)
-            empArray[2].gross = 0.5f * (input * numberItems);  //You've gotta be kidding. To fix the error I just needed to add "f" after 0.5, to signify "float".
-
-        //Testing commits
 
             employeesExist = true;
         }
@@ -133,7 +143,6 @@ namespace CSharp_Final_Project
                 Employee em = new Employee();
                 Console.WriteLine("\nPlease Select an employee:\n");
                 Console.WriteLine("Enter 0 for an Hourly Employee \nEnter 1 for a Salary Employee \nEnter 2 for a Comission Employee \nEnter -99 to Exit");
-                //Console.WriteLine("\n 0, 1, or 2).  -99 to exit.");
                 sinput = Console.ReadLine();
                 input = Convert.ToInt32(sinput);
                 if (input != -99)
