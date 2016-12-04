@@ -14,7 +14,7 @@ namespace CSharp_Final_Project
         int input;
         int numberItems;
         bool employeesExist = false;
-        int temp;
+        //int temp;
         public static void Main(string[] args)
         {
             Payroll pay = new Payroll();

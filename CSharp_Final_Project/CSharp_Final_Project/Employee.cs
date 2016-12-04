@@ -14,15 +14,15 @@ namespace CSharp_Final_Project
         *********************/
         public float rate = 30.0f;
         public float ovtrate = 45.0f;
-        float taxrate = 0.2f;
+        public float taxrate = 0.2f;
         public int hours = 45;
         public float gross = 0.0f;
-        float tax = 0.0f;
+        public float tax = 0.0f;
         public float net = 0.0f;
         float net_percent = 0.0f;
         String ID;
         public int employeeID;
-        Payroll py = new Payroll();
+        //Payroll py = new Payroll();
 
         //End Attributes
 
@@ -84,6 +84,7 @@ namespace CSharp_Final_Project
 
         public void computeGross()  //hourly employees only
         {
+            Payroll py = new Payroll();
             if (employeeID == 0)
             {
                 if (hours > 40)
@@ -108,6 +109,7 @@ namespace CSharp_Final_Project
 
         public void computeTax() //For all employees
         {
+            Payroll py = new Payroll();
             py.empArray[employeeID].tax = py.empArray[employeeID].gross * py.empArray[employeeID].taxrate;
             Console.WriteLine("Tax: " + py.empArray[employeeID].tax);
 
@@ -115,18 +117,21 @@ namespace CSharp_Final_Project
 
         public void computeNet() //all employees
         {
+            Payroll py = new Payroll();
             py.empArray[employeeID].net = py.empArray[employeeID].gross - py.empArray[employeeID].tax;
             Console.WriteLine("Net: " + py.empArray[employeeID].net);
         }
 
         public void computeNetperc() //all employees
         {
+            Payroll py = new Payroll();
             py.empArray[employeeID].net_percent = (py.empArray[employeeID].net / py.empArray[employeeID].gross) * 100;
             Console.WriteLine("Net%: " + py.empArray[employeeID].net_percent + "%");
         }
 
         public void displayEmployee()
         {
+            Payroll py = new Payroll();
             Console.WriteLine("Hours: " + py.empArray[employeeID].hours);
             Console.WriteLine("Rate: " + py.empArray[employeeID].rate);
             Console.WriteLine("Gross: " + py.empArray[employeeID].gross);
