@@ -121,7 +121,6 @@ namespace CSharp_Final_Project
                     numberItems = input;
                     Console.WriteLine("Unit price of items sold?");
                     input = Convert.ToInt32(Console.ReadLine());
-                    //set net to .5(input*numberItems)
                     empArray[2].gross = 0.5f * (input * numberItems);
                 }
                 else
