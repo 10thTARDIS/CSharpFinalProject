@@ -130,6 +130,7 @@ namespace CSharp_Final_Project
             input = -1;
             while (input != -99)
             {
+                Employee em = new Employee();
                 Console.WriteLine("\nPlease Select an employee:\n");
                 Console.WriteLine("Enter 0 for an Hourly Employee \nEnter 1 for a Salary Employee \nEnter 2 for a Comission Employee \nEnter -99 to Exit");
                 //Console.WriteLine("\n 0, 1, or 2).  -99 to exit.");
@@ -137,7 +138,13 @@ namespace CSharp_Final_Project
                 input = Convert.ToInt32(sinput);
                 if (input != -99)
                 {
-                    empArray[input].menu();
+                    if (input == 0 || input == 1 || input == 2)
+                    {
+                        em.employeeID = input;
+                        empArray[input].menu();
+                    }
+                    else Console.WriteLine("Invalid input. Please enter  0 for an Hourly Employee, 1 for a Salary Employee, 2 for a Comission Employee, or -99 to Exit");
+
                 }
                 else Console.WriteLine("Goodbye.");
             }
