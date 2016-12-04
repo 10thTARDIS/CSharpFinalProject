@@ -8,7 +8,6 @@ namespace CSharp_Final_Project
 {
     public class Salaried : Employee
     {
-        public new float gross = 0.0f;
         String ID;
 
         public Salaried(String arg_ID)
