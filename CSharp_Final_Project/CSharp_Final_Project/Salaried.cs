@@ -22,8 +22,8 @@ namespace CSharp_Final_Project
         }
         public override void displayEmployee()
         {
-            Console.WriteLine("Hours: " + hours);
-            Console.WriteLine("Rate: " + rate);
+            //Console.WriteLine("Hours: " + hours);
+            //Console.WriteLine("Rate: " + rate);
             Console.WriteLine("Gross: " + gross);
             Console.WriteLine("Tax: " + tax);
             Console.WriteLine("Net: " + net);

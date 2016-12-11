@@ -52,7 +52,7 @@ namespace CSharp_Final_Project
                 //Console.WriteLine("3) Calculate Net Pay");
                 //Console.WriteLine("4) Calculate Net Percent");
                 Console.WriteLine("3) Display Employee");
-                Console.WriteLine("6) Exit");
+                Console.WriteLine("6) Go Back");
                 input = Convert.ToInt32(Console.ReadLine());
                 if (input == 1)
                 {
