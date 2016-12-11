@@ -98,15 +98,8 @@ namespace CSharp_Final_Project
             }
             else
             {
-<<<<<<< HEAD
                 Console.WriteLine("For hourly employees only, please choose another option \n");
             }
-
-            
-=======
-
-            } 
->>>>>>> origin/WorkingBranch
         }
 
         public void computeTax() //For all employees
@@ -143,5 +136,4 @@ namespace CSharp_Final_Project
             }
         }
     }
-
 }
