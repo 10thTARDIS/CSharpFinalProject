@@ -1,26 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CSharp_Final_Project
 {
-    [Serializable()]
-    class Employee
+    [Serializable]
+
+    public class Employee
     {
         /*********************
              Attributes
         *********************/
         public float rate = 30.0f;
-        float taxrate = 0.2f;
-        public int hours = 45;
-        public float gross = 0.0f;
-        float tax = 0.0f;
+        public float ovtrate = 45f;
+        protected float taxrate = 0.2f;
+        public int hours;
+        public float gross;
+        protected float tax = 0.0f;
         public float net = 0.0f;
-        float net_percent = 0.0f;
+        protected float net_percent = 0.0f;
         String ID;
-
+        public int employeeID;
         //End Attributes
 
         /********************
@@ -44,30 +47,34 @@ namespace CSharp_Final_Project
             do
             {
                 Console.WriteLine("\nWhat would you like to do?\n");
-                Console.WriteLine("1) Calculate Gross Pay");
-                Console.WriteLine("2) Calculate Tax");
-                Console.WriteLine("3) Calculate Net Pay");
-                Console.WriteLine("4) Calculate Net Percent");
-                Console.WriteLine("4) Display Employee ");
-                Console.WriteLine("6) Exit");
+                Console.WriteLine("1) Calculate Gross Pay, Tax, Net Pay, and Net Percent");
+                //Console.WriteLine("2) Calculate Tax");
+                //Console.WriteLine("3) Calculate Net Pay");
+                //Console.WriteLine("4) Calculate Net Percent");
+                Console.WriteLine("3) Display Employee");
+                Console.WriteLine("6) Go Back");
                 input = Convert.ToInt32(Console.ReadLine());
                 if (input == 1)
                 {
                     computeGross();
-                }
-                else if (input == 2)
-                {
                     computeTax();
-                }
-                else if (input == 3)
-                {
                     computeNet();
-                }
-                else if (input == 4)
-                {
                     computeNetperc();
+                    displayEmployee();
                 }
-                else if (input == 5)
+                //else if (input == 2)
+                //{
+                //    computeTax();
+                //}
+                //else if (input == 3)
+                //{
+                //    computeNet();
+                //}
+                //else if (input == 4)
+                //{
+                //    computeNetperc();
+                //}
+                else if (input == 3)
                 {
                     displayEmployee();
                 }
@@ -75,41 +82,49 @@ namespace CSharp_Final_Project
             } while (input != 6);
         }
 
-        public void computeGross()
+        public void computeGross()  //hourly employees only
         {
-            gross = rate * hours;
-            Console.WriteLine("Hours: " + hours);
-            Console.WriteLine("Rate: " + rate);
-            Console.WriteLine("Gross: " + gross);
+            if (employeeID == 0)
+            {
+                if (hours > 40)
+                {
+                    gross = (hours - 40) * ovtrate + rate * 40;
+                }
+                else
+                {
+                    gross = rate * hours;
+                }
+            }
+            else
+            {
+                //Console.WriteLine("For hourly employees only, please choose another option \n");
+            }
         }
 
-        public void computeTax()
+        public void computeTax() //For all employees
         {
             tax = gross * taxrate;
-            Console.WriteLine("Tax: " + tax);
 
         }
 
-        public void computeNet()
+        public void computeNet() //all employees
         {
             net = gross - tax;
-            Console.WriteLine("Net: " + net);
         }
 
-        public void computeNetperc()
+        public void computeNetperc() //all employees
         {
             net_percent = (net / gross) * 100;
-            Console.WriteLine("Net%: " + net_percent + "%");
         }
 
-        public void displayEmployee()
+        public virtual void displayEmployee()
         {
             Console.WriteLine("Hours: " + hours);
             Console.WriteLine("Rate: " + rate);
             Console.WriteLine("Gross: " + gross);
+            Console.WriteLine("Tax: " + tax);
             Console.WriteLine("Net: " + net);
             Console.WriteLine("Net%: " + net_percent + "%");
         }
     }
-
 }
