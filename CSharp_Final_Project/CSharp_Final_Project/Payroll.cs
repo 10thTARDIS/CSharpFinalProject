@@ -187,9 +187,9 @@ namespace CSharp_Final_Project
             FileStream.Close();
 
             //Write array to text file
-            hr.hourlyExport();
-            sal.salaryExport();
-            com.commissionedExport();
+            //hr.hourlyExport();
+            //sal.salaryExport();
+            //com.commissionedExport();
 
             Console.WriteLine("\nYour changes have been saved.  Goodbye.");
 
