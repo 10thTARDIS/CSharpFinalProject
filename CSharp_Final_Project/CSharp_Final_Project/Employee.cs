@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace CSharp_Final_Project
 {
-    [Serializable()]
+    //[Serializable()]
+    [Serializable]
+
     public class Employee
     {
         /*********************
              Attributes
         *********************/
-        public float rate;
+        public float rate = 30.0f;
         public float ovtrate = 45f;
         float taxrate = 0.2f;
         public int hours;
@@ -100,9 +102,10 @@ namespace CSharp_Final_Project
                     Console.WriteLine("Rate: " + rate);
                     Console.WriteLine("Gross: " + gross);
                 }
-            } else
+            }
+            else
             {
-
+                Console.WriteLine("For hourly employees only, please choose another option \n");
             }
 
             

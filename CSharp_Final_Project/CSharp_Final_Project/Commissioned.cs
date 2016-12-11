@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace CSharp_Final_Project
 {
+    [Serializable()]
+
     public class Commissioned : Employee
     {
         String ID;

@@ -8,12 +8,15 @@ using System.Xml.Serialization;
 
 namespace CSharp_Final_Project
 {
+    [Serializable()]
     class Payroll
     {
         public Employee[] empArray = { new Employee("123"), new Employee("456"), new Employee("789") };
         int input;
         public int numberItems;
         public bool employeesExist = false;
+        //public string path;
+
         public static void Main(string[] args)
         {
             Payroll pay = new Payroll();
@@ -78,13 +81,13 @@ namespace CSharp_Final_Project
                 }
             } while (input != 5);
         }
-
+        
         public void populateEmployees()
         {
             Employee em = new Employee();
             Console.WriteLine("Please fill out the attributes for the employees you wish to add\n");
 
-            for (int i=0; i<empArray.Length; i++)
+            for (int i = 0; i < empArray.Length; i++)
             {
                 if (i == 0)
                 {
@@ -158,6 +161,14 @@ namespace CSharp_Final_Project
             }
         }
 
+        //[Serializable]
+        //[XmlRoot("EmployeeCollection")]
+        //public class EmployeeContainer
+        //{
+        //    [XmlArray("Employees")]
+        //    [XmlArrayItem("Employee")]
+        //    public List<Employee> Employees = new List<Employee>();
+        //}
         public void saveEmployee()
         {
             Stream FileStream = File.Create("test.xml");
@@ -165,6 +176,12 @@ namespace CSharp_Final_Project
             serializer.Serialize(FileStream, empArray);
             FileStream.Close();
             Console.WriteLine("\nYour changes have been saved.  Goodbye.");
+
+            //var serializer = new XmlSerializer(typeof(EmployeeContainer));
+            //var stream = new FileStream(path, FileMode.Create);
+            //serializer.Serialize(stream, this);
+            //stream.Close();
+
         }
 
         public void loadEmployee()
@@ -174,6 +191,11 @@ namespace CSharp_Final_Project
             empArray = (Employee[])deserializer.Deserialize(FileStream);
             FileStream.Close();
             employeesExist = true;
+
+            //var serializer = new XmlSerializer(typeof(EmployeeContainer));
+            //var stream = new FileStream(path, FileMode.Open);
+            //var container = serializer.Deserialize(stream) as EmployeeContainer;
+            //stream.Close();
         }
     }
 }
