@@ -24,7 +24,7 @@ namespace CSharp_Final_Project
 
         public void hourlyExport()
         {
-            using (System.IO.StreamWriter sw = File.CreateText("C:/Users/Public/TestFolder/HourlyData.txt"))
+            using (System.IO.StreamWriter sw = File.CreateText(@"C:\Users\Public\TestFolder\HourlyData.txt"))
             {
                 sw.WriteLine("Hours: " + hours);
                 sw.WriteLine("Rate: " + taxrate);
