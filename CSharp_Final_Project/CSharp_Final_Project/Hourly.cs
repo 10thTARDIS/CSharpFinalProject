@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp_Final_Project
 {
+    [Serializable()]
     public class Hourly : Employee
     {
         String ID;
