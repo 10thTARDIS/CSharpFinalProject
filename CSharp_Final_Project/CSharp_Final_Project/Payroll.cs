@@ -40,7 +40,7 @@ namespace CSharp_Final_Project
                 Console.WriteLine("\nWhat would you like to do?\n");
                 Console.WriteLine("1) Populate Employees");
                 Console.WriteLine("2) Select Employee");
-                Console.WriteLine("3) Save Employees");
+                Console.WriteLine("3) Save Employees and quit");
                 Console.WriteLine("4) Load Employees");
                 Console.WriteLine("5) Exit");
                 input = Convert.ToInt32(Console.ReadLine());
@@ -177,6 +177,8 @@ namespace CSharp_Final_Project
         public void saveEmployee()
         {
             Hourly hr = new Hourly();
+            Salaried sal = new Salaried();
+            Commissioned com = new Commissioned();
             System.IO.Stream FileStream = File.Create(@"C:\Users\Public\TestFolder\WriteLines.xml");
             //XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
             BinaryFormatter serializer = new BinaryFormatter();
@@ -186,6 +188,8 @@ namespace CSharp_Final_Project
 
             //Write array to text file
             hr.hourlyExport();
+            sal.salaryExport();
+            com.commissionedExport();
 
             Console.WriteLine("\nYour changes have been saved.  Goodbye.");
 

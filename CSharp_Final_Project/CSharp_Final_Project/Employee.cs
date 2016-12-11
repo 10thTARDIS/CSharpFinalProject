@@ -52,7 +52,7 @@ namespace CSharp_Final_Project
                 //Console.WriteLine("2) Calculate Tax");
                 //Console.WriteLine("3) Calculate Net Pay");
                 //Console.WriteLine("4) Calculate Net Percent");
-                Console.WriteLine("3) Display Employee ");
+                Console.WriteLine("3) Display Employee");
                 Console.WriteLine("6) Exit");
                 input = Convert.ToInt32(Console.ReadLine());
                 if (input == 1)
@@ -126,14 +126,14 @@ namespace CSharp_Final_Project
             Console.WriteLine("Tax: " + tax);
             Console.WriteLine("Net: " + net);
             Console.WriteLine("Net%: " + net_percent + "%");
-            using (System.IO.StreamWriter sw = File.CreateText("HourlyData.txt"))
-            {
-                sw.WriteLine("Hours: " + hours);
-                sw.WriteLine("Rate: " + taxrate);
-                sw.WriteLine("Gross: " + gross);
-                sw.WriteLine("Net: " + net);
-                sw.WriteLine("Net%: " + net_percent + "%");
-            }
+            //using (System.IO.StreamWriter sw = File.CreateText("HourlyData.txt"))
+            //{
+            //    sw.WriteLine("Hours: " + hours);
+            //    sw.WriteLine("Rate: " + taxrate);
+            //    sw.WriteLine("Gross: " + gross);
+            //    sw.WriteLine("Net: " + net);
+            //    sw.WriteLine("Net%: " + net_percent + "%");
+            //}
         }
     }
 }

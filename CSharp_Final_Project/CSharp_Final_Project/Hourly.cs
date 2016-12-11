@@ -32,6 +32,7 @@ namespace CSharp_Final_Project
                 sw.WriteLine("Net: " + net);
                 sw.WriteLine("Net%: " + net_percent + "%");
             }
+            Console.WriteLine("Successfully wrote Hourly paystub to file.");
         }
     }
 }
