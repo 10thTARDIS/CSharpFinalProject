@@ -148,7 +148,8 @@ namespace CSharp_Final_Project
                 {
                     if (input == 0 || input == 1 || input == 2)
                     {
-                        em.employeeID = input;
+                        //em.employeeID = input;
+                        empArray[input].employeeID = input;
                         empArray[input].menu();
                     }
                     else Console.WriteLine("Invalid input. Please enter  0 for an Hourly Employee, 1 for a Salary Employee, 2 for a Comission Employee, or -99 to Exit");

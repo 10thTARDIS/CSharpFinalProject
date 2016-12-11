@@ -83,6 +83,7 @@ namespace CSharp_Final_Project
         public void computeGross()  //hourly employees only
         {
             Payroll py = new Payroll();
+            //Employee em = new CSharp_Final_Project.Employee();
             if (employeeID == 0)
             {
                 if (hours > 40)
