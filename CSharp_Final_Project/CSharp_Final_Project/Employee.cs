@@ -15,12 +15,12 @@ namespace CSharp_Final_Project
         *********************/
         public float rate;
         public float ovtrate = 45f;
-        float taxrate = 0.2f;
+        protected float taxrate = 0.2f;
         public int hours;
         public float gross;
-        float tax = 0.0f;
-        float net = 0.0f;
-        float net_percent = 0.0f;
+        protected float tax = 0.0f;
+        protected float net = 0.0f;
+        protected float net_percent = 0.0f;
         String ID;
         public int employeeID;
         //End Attributes
