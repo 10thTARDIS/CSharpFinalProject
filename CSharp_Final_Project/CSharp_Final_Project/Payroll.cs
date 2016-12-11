@@ -164,6 +164,11 @@ namespace CSharp_Final_Project
             XmlSerializer serializer = new XmlSerializer(typeof(Employee[]));
             serializer.Serialize(FileStream, empArray);
             FileStream.Close();
+
+            //Write array to text file
+            string[] lines = { "123", "456", "789" };
+            System.IO.File.WriteAllLines(@"C:\Users\Public\TestFolder\WriteLines.txt", lines);
+
             Console.WriteLine("\nYour changes have been saved.  Goodbye.");
         }
 
