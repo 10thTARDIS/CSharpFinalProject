@@ -7,10 +7,6 @@ using System.Threading.Tasks;
 namespace CSharp_Final_Project
 {
     [Serializable()]
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/WorkingBranch
     public class Commissioned : Employee
     {
         String ID;

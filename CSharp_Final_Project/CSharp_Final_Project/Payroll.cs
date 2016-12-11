@@ -187,17 +187,13 @@ namespace CSharp_Final_Project
             //Using the code from Tony, added this bit to Employee.cs
 
             Console.WriteLine("\nYour changes have been saved.  Goodbye.");
-<<<<<<< HEAD
 
             //var serializer = new XmlSerializer(typeof(EmployeeContainer));
             //var stream = new FileStream(path, FileMode.Create);
             //serializer.Serialize(stream, this);
             //stream.Close();
-
-=======
             Thread.Sleep(3000);
             Environment.Exit(0);
->>>>>>> origin/WorkingBranch
         }
 
         public void loadEmployee()
