@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -122,6 +123,14 @@ namespace CSharp_Final_Project
             Console.WriteLine("Tax: " + tax);
             Console.WriteLine("Net: " + net);
             Console.WriteLine("Net%: " + net_percent + "%");
+            using (System.IO.StreamWriter sw = File.CreateText("HourlyData.txt"))
+            {
+                sw.WriteLine("Hours: " + hours);
+                sw.WriteLine("Rate: " + taxrate);
+                sw.WriteLine("Gross: " + gross);
+                sw.WriteLine("Net: " + net);
+                sw.WriteLine("Net%: " + net_percent + "%");
+            }
         }
     }
 

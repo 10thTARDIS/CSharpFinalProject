@@ -173,6 +173,7 @@ namespace CSharp_Final_Project
             FileStream.Close();
 
             //Write array to text file
+            //Using the code from Tony, added this bit to Employee.cs
 
             Console.WriteLine("\nYour changes have been saved.  Goodbye.");
             Thread.Sleep(3000);
