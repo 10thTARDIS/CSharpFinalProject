@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -22,6 +24,9 @@ namespace CSharp_Final_Project
             Payroll pay = new Payroll();
             Console.WriteLine("Welcome to the system.");
             Console.WriteLine("One moment, logging on...");
+            Thread.Sleep(1000);
+            Console.WriteLine("Successfully authenticated, loading system...");
+            Thread.Sleep(1000);
             pay.menu();
         }
 
@@ -151,7 +156,7 @@ namespace CSharp_Final_Project
                 {
                     if (input == 0 || input == 1 || input == 2)
                     {
-                        em.employeeID = input;
+                        empArray[input].employeeID = input;
                         empArray[input].menu();
                     }
                     else Console.WriteLine("Invalid input. Please enter  0 for an Hourly Employee, 1 for a Salary Employee, 2 for a Comission Employee, or -99 to Exit");
@@ -171,23 +176,35 @@ namespace CSharp_Final_Project
         //}
         public void saveEmployee()
         {
-            Stream FileStream = File.Create("test.xml");
-            XmlSerializer serializer = new XmlSerializer(typeof(Employee[]));
+            System.IO.Stream FileStream = File.Create(@"C:\Users\Public\TestFolder\WriteLines.xml");
+            //XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
+            BinaryFormatter serializer = new BinaryFormatter();
+            //XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
             serializer.Serialize(FileStream, empArray);
             FileStream.Close();
+
+            //Write array to text file
+            //Using the code from Tony, added this bit to Employee.cs
+
             Console.WriteLine("\nYour changes have been saved.  Goodbye.");
+<<<<<<< HEAD
 
             //var serializer = new XmlSerializer(typeof(EmployeeContainer));
             //var stream = new FileStream(path, FileMode.Create);
             //serializer.Serialize(stream, this);
             //stream.Close();
 
+=======
+            Thread.Sleep(3000);
+            Environment.Exit(0);
+>>>>>>> origin/WorkingBranch
         }
 
         public void loadEmployee()
         {
-            Stream FileStream = File.OpenRead("test.xml");
-            XmlSerializer deserializer = new XmlSerializer(typeof(Employee[]));
+            Stream FileStream = File.OpenRead(@"C:\Users\Public\TestFolder\WriteLines.xml");
+            //XmlSerializer deserializer = new XmlSerializer(typeof(Account[]));
+            BinaryFormatter deserializer = new BinaryFormatter();
             empArray = (Employee[])deserializer.Deserialize(FileStream);
             FileStream.Close();
             employeesExist = true;

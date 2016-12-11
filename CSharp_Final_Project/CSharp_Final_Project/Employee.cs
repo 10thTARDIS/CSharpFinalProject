@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,11 +48,11 @@ namespace CSharp_Final_Project
             do
             {
                 Console.WriteLine("\nWhat would you like to do?\n");
-                Console.WriteLine("1) Calculate Gross Pay");
-                Console.WriteLine("2) Calculate Tax");
-                Console.WriteLine("3) Calculate Net Pay");
-                Console.WriteLine("4) Calculate Net Percent");
-                Console.WriteLine("5) Display Employee ");
+                Console.WriteLine("1) Calculate Gross Pay, Tax, Net Pay, and Net Percent");
+                //Console.WriteLine("2) Calculate Tax");
+                //Console.WriteLine("3) Calculate Net Pay");
+                //Console.WriteLine("4) Calculate Net Percent");
+                Console.WriteLine("3) Display Employee ");
                 Console.WriteLine("6) Exit");
                 input = Convert.ToInt32(Console.ReadLine());
                 if (input == 1)
@@ -62,19 +63,19 @@ namespace CSharp_Final_Project
                     computeNetperc();
                     displayEmployee();
                 }
-                else if (input == 2)
-                {
-                    computeTax();
-                }
+                //else if (input == 2)
+                //{
+                //    computeTax();
+                //}
+                //else if (input == 3)
+                //{
+                //    computeNet();
+                //}
+                //else if (input == 4)
+                //{
+                //    computeNetperc();
+                //}
                 else if (input == 3)
-                {
-                    computeNet();
-                }
-                else if (input == 4)
-                {
-                    computeNetperc();
-                }
-                else if (input == 5)
                 {
                     displayEmployee();
                 }
@@ -84,50 +85,44 @@ namespace CSharp_Final_Project
 
         public void computeGross()  //hourly employees only
         {
-            Payroll py = new Payroll();
             if (employeeID == 0)
             {
                 if (hours > 40)
                 {
                     gross = (hours - 40) * ovtrate + rate * 40;
-                    Console.WriteLine("Hours: " + hours);
-                    Console.WriteLine("Rate: " + rate);
-                    Console.WriteLine("Over Time Rate: " + ovtrate);
-                    Console.WriteLine("Gross: " + gross);
                 }
                 else
                 {
                     gross = rate * hours;
-                    Console.WriteLine("Hours: " + hours);
-                    Console.WriteLine("Rate: " + rate);
-                    Console.WriteLine("Gross: " + gross);
                 }
             }
             else
             {
+<<<<<<< HEAD
                 Console.WriteLine("For hourly employees only, please choose another option \n");
             }
 
             
+=======
+
+            } 
+>>>>>>> origin/WorkingBranch
         }
 
         public void computeTax() //For all employees
         {
             tax = gross * taxrate;
-            Console.WriteLine("Tax: " + tax);
 
         }
 
         public void computeNet() //all employees
         {
             net = gross - tax;
-            Console.WriteLine("Net: " + net);
         }
 
         public void computeNetperc() //all employees
         {
             net_percent = (net / gross) * 100;
-            Console.WriteLine("Net%: " + net_percent + "%");
         }
 
         public void displayEmployee()
@@ -135,8 +130,17 @@ namespace CSharp_Final_Project
             Console.WriteLine("Hours: " + hours);
             Console.WriteLine("Rate: " + rate);
             Console.WriteLine("Gross: " + gross);
+            Console.WriteLine("Tax: " + tax);
             Console.WriteLine("Net: " + net);
             Console.WriteLine("Net%: " + net_percent + "%");
+            using (System.IO.StreamWriter sw = File.CreateText("HourlyData.txt"))
+            {
+                sw.WriteLine("Hours: " + hours);
+                sw.WriteLine("Rate: " + taxrate);
+                sw.WriteLine("Gross: " + gross);
+                sw.WriteLine("Net: " + net);
+                sw.WriteLine("Net%: " + net_percent + "%");
+            }
         }
     }
 
